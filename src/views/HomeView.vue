@@ -602,29 +602,35 @@
       </div>
     </div>
 
-    <!-- PARTNERS SECTION - Keep -->
-    <div class="partners">
-      <div class="scroller">
-        <div class="scroller_inner">
-          Our reputed world wide partners Our reputed world wide partners
-        </div>
-      </div>
+    <div class="partners py-5">
       <div class="container">
-        <div class="content">
-          <div class="brand-logo">
-            <img src="../../imgs/homeAssets/partner_1.svg" alt="partner_1" />
+        <div class="row align-items-center">
+          <div class="col-lg-4">
+            <div class="partners-info mb-5 mb-lg-0">
+              <h2 class="text-white mb-3">Our Trusted Partners</h2>
+              <p class="text-muted">We collaborate with industry leaders to deliver the best solutions for our clients.</p>
+            </div>
           </div>
-          <div class="brand-logo">
-            <img src="../../imgs/homeAssets/partner_2.svg" alt="partner_2" />
-          </div>
-          <div class="brand-logo">
-            <img src="../../imgs/homeAssets/partner_3.svg" alt="partner_3" />
-          </div>
-          <div class="brand-logo">
-            <img src="../../imgs/homeAssets/partner_4.svg" alt="partner_4" />
-          </div>
-          <div class="brand-logo">
-            <img src="../../imgs/homeAssets/partner_5.svg" alt="partner_5" />
+          <div class="col-lg-8">
+            <div class="swiper partners-vertical-slider" ref="partnersSwiper">
+              <div class="swiper-wrapper">
+                <div class="swiper-slide brand-logo">
+                  <img src="../../imgs/homeAssets/partner_1.svg" alt="partner_1" />
+                </div>
+                <div class="swiper-slide brand-logo">
+                  <img src="../../imgs/homeAssets/partner_2.svg" alt="partner_2" />
+                </div>
+                <div class="swiper-slide brand-logo">
+                  <img src="../../imgs/homeAssets/partner_3.svg" alt="partner_3" />
+                </div>
+                <div class="swiper-slide brand-logo">
+                  <img src="../../imgs/homeAssets/partner_4.svg" alt="partner_4" />
+                </div>
+                <div class="swiper-slide brand-logo">
+                  <img src="../../imgs/homeAssets/partner_5.svg" alt="partner_5" />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
@@ -717,6 +723,7 @@ export default {
         this.$nextTick(() => {
           this.$store.dispatch("doneLoading", true);
           this.initSwipers();
+          this.initPartnersSwiper();
         });
       });
     },
@@ -2064,78 +2071,51 @@ export default {
     }
 
     .partners {
-      @media (max-width: 1380px) {
-        .scroller {
-          font-size: 100px !important;
-        }
-      }
-      @media (max-width: 1199px) {
-        .scroller {
-          font-size: 80px !important;
-        }
-      }
-      @media (max-width: 575px) {
-        .scroller {
-          font-size: 56px !important;
-        }
-      }
-      .scroller {
-        font-size: 120px;
-        font-weight: 700;
-        -webkit-text-fill-color: transparent;
-        -webkit-text-stroke-color: var(--prim-color);
-        -webkit-text-stroke-width: 2px;
-        white-space: nowrap;
-        overflow-x: hidden;
-        display: flex;
-        flex-wrap: nowrap;
-        align-items: center;
-        mask: linear-gradient(
-          90deg,
-          transparent,
-          white 10%,
-          white 90%,
-          transparent
-        );
-        .scroller_inner {
-          animation: scrollerAnimation 20s linear infinite;
-        }
-      }
-      @media (max-width: 991px) {
-        .content {
-          margin: 70px 0 0 0 !important;
-        }
-      }
-      .content {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        margin: 100px 0 0 0;
-        @media (max-width: 575px) {
-          .brand-logo {
-            padding: 10px !important;
+      background: rgba(255, 255, 255, 0.02);
+      border-top: 1px solid var(--glass-border);
+      border-bottom: 1px solid var(--glass-border);
+
+      .partners-vertical-slider {
+        height: 350px;
+        padding: 20px 0;
+
+        .swiper-slide {
+          height: 120px !important;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: all 0.3s ease;
+          opacity: 0.5;
+
+          &.swiper-slide-active,
+          &:hover {
+            opacity: 1;
+            transform: scale(1.1);
           }
-        }
-        .brand-logo {
-          &:nth-of-type(1) {
-            padding-left: 0;
-          }
-          &:nth-of-type(5) {
-            padding-right: 0;
-          }
-          transition-duration: 0.5s;
-          cursor: pointer;
-          @media (min-width: 992px) {
+
+          img {
+            max-width: 180px;
+            width: auto;
+            height: 60px;
+            filter: grayscale(1) brightness(2);
+            transition: all 0.3s ease;
+
             &:hover {
-              transform: scale(1.1);
+              filter: grayscale(0) brightness(1);
             }
           }
-          padding: 20px;
-          img {
-            max-width: 100%;
-            width: 100%;
-            height: auto;
-          }
+        }
+      }
+
+      .partners-info {
+        h2 {
+          font-family: var(--font-heading);
+          font-weight: 800;
+          font-size: 36px;
+        }
+        p {
+          font-size: 18px;
+          line-height: 1.6;
         }
       }
     }
