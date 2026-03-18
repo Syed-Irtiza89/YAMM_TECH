@@ -8,44 +8,25 @@
       <div class="container">
         <div class="head">
           <div class="homeheadsec">Our Team</div>
-          <div class="mainTitle">
-            Awesome team <br />
-            members
-          </div>
+          <h2 class="mainTitle">Awesome team members</h2>
         </div>
-        <div v-show="doneLoadingVal" class="teamMembers row">
+        <div v-show="doneLoadingVal" class="teamGrid row gy-4">
           <div
-            v-for="(member, index) in getTeamMembersData"
+            v-for="(member, index) in newTeamMembers"
             :key="index"
-            class="col-lg-3 col-sm-6 col-12"
+            class="col-lg-3 col-md-4 col-sm-6 col-12"
           >
-            <div class="memberCard">
-              <router-link
-                aria-label="teamMember"
-                :to="'/teamDetails/' + member.id"
-              >
-                <div class="img-container">
-                  <img loading="lazy" :src="member.imgUrl" alt="team member" />
+            <div class="memberCard text-center">
+              <div class="name">{{ member.name }}</div>
+              <div class="expertise">{{ member.expertise }}</div>
+              <div class="socials mt-3 justify-content-center">
+                <div class="social">
+                  <font-awesome-icon icon="fa-brands fa-linkedin-in" />
                 </div>
-                <div class="title">
-                  <div class="name">{{ member.name }}</div>
-                  <div class="rule">{{ member.job }}</div>
+                <div class="social">
+                  <font-awesome-icon icon="fa-brands fa-github" />
                 </div>
-                <div class="socials">
-                  <div class="social">
-                    <font-awesome-icon icon="fa-brands fa-linkedin-in" />
-                  </div>
-                  <div class="social">
-                    <font-awesome-icon icon="fa-brands fa-x-twitter" />
-                  </div>
-                  <div class="social">
-                    <font-awesome-icon icon="fa-brands fa-youtube" />
-                  </div>
-                  <div class="social">
-                    <font-awesome-icon icon="fa-brands fa-github" />
-                  </div>
-                </div>
-              </router-link>
+              </div>
             </div>
           </div>
         </div>
@@ -66,7 +47,16 @@ export default {
   data() {
     return {
       imgUrl: require("../../../imgs/pages/ourTeam/team_hero_bg.webp"),
-      doneLoadingVal: false,
+      doneLoadingVal: true,
+      newTeamMembers: [
+        { name: "Minhal", expertise: "Lead Frontend Developer" },
+        { name: "Abuzar", expertise: "Senior Backend Developer" },
+        { name: "Muhammad", expertise: "Full Stack Engineer" },
+        { name: "Moosa", expertise: "Creative UI/UX Designer" },
+        { name: "Murtaza", expertise: "Mobile App Specialist" },
+        { name: "Ali", expertise: "Digital Marketing & SEO Expert" },
+        { name: "Irtiza", expertise: "Project Manager & Strategy" },
+      ],
     };
   },
   methods: {
@@ -124,74 +114,69 @@ export default {
         margin: 0px auto 20px;
       }
     }
-    .teamMembers {
-      a {
-        color: #fefefe;
-      }
-      @media (max-width: 991px) {
-        .memberCard {
-          margin: 0 0 30px 0 !important;
-        }
-      }
+    .teamGrid {
+      padding: 20px 0;
       .memberCard {
-        margin: 0 12px;
-        width: 100%;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 20px;
+        padding: 40px 20px;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        height: 100%;
+        min-height: 220px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
         position: relative;
-        cursor: pointer;
-        @media (min-width: 992px) {
-          &:hover {
-            .img-container {
-              img {
-                transform: scale(1.1);
-              }
-            }
-            .social {
-              transform: rotate(0deg) scale(1) !important;
-            }
-          }
-        }
-        .img-container {
-          border-radius: 15px;
-          overflow: hidden;
-          z-index: 1;
-          img {
-            width: 100%;
-            max-width: 100%;
-            transition-duration: 1s;
-          }
-        }
-        .title {
-          position: absolute;
-          bottom: 30px;
-          left: 25px;
-          z-index: 2;
-          text-align: start;
-          @media (max-width: 1380px) {
-            .name {
-              font-size: 20px !important;
-            }
-          }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.07);
+          border-color: var(--prim-color);
+          transform: translateY(-10px);
+          box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+
           .name {
-            font-size: 23px;
-            font-weight: 700;
-            text-transform: capitalize;
-          }
-          .rule {
-            color: #fefefeb3;
+            color: var(--prim-color);
           }
         }
+
+        .name {
+          font-family: var(--font-heading);
+          font-size: 24px;
+          font-weight: 800;
+          color: #fff;
+          margin-bottom: 8px;
+          transition: color 0.3s ease;
+        }
+
+        .expertise {
+          color: rgba(255, 255, 255, 0.6);
+          font-size: 13px;
+          text-transform: uppercase;
+          letter-spacing: 1.5px;
+          font-weight: 600;
+          margin-bottom: 20px;
+        }
+
         .socials {
-          position: absolute;
-          left: 25px;
-          top: 15px;
-          z-index: 2;
+          display: flex;
+          gap: 12px;
           .social {
-            margin: 20px 20px 20px 0;
-            font-size: 18px;
-            transition-duration: 0.5s;
-            transform: rotate(45deg) scale(0);
+            width: 36px;
+            height: 36px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            font-size: 14px;
+            transition: all 0.3s ease;
             &:hover {
-              color: var(--prim-color);
+              background: var(--prim-color);
+              color: #000;
             }
           }
         }

@@ -352,13 +352,13 @@
     <div class="portfolio">
       <div class="content">
         <div
-          class="head d-flex justify-content-between align-items-end flex-wrap gap-4"
+          class="head text-center mb-5 d-flex flex-column align-items-center justify-content-center"
         >
           <div class="head-text">
-            <div class="homeheadsec">Latest Projects</div>
-            <h1>Portfolio to explore</h1>
+            <div class="homeheadsec text-center">Latest Projects</div>
+            <h1 class="text-center">Portfolio to explore</h1>
           </div>
-          <router-link to="/portfolio" class="servicesbtn goToBtn mb-3">
+          <router-link to="/portfolio" class="servicesbtn goToBtn mt-3">
             <div class="hoveranim">View All Projects</div>
             <font-awesome-icon icon="fa-solid fa-arrow-right-long" />
           </router-link>
@@ -381,7 +381,10 @@
                       aria-label="portfolio"
                       :to="'/portfolioDetails/' + post.id"
                     >
-                      <img :src="post.imgUrl" :alt="post.title" />
+                      <img
+                        :src="getProjectImg(post, index)"
+                        :alt="post.title"
+                      />
                       <div class="overlay">
                         <div class="project-info">
                           <span class="category">{{
@@ -410,71 +413,33 @@
     <div class="ourTeam">
       <div class="container">
         <div class="content">
-          <div class="controls">
+          <div class="controls text-center justify-content-center mb-5">
             <div class="head">
-              <div class="homeheadsec slidOurTeam">Our Team</div>
-              <div class="mainTitle">
-                Awesome team <br class="d-block d-xl-none" />
-                members
-              </div>
-            </div>
-            <div class="myCustomNav d-block d-xl-none">
-              <button
-                aria-label="prevbtn"
-                class="prevbtn"
-                @click="prevSwiper('teamSwiper')"
-              >
-                <font-awesome-icon icon="fa-solid fa-arrow-left-long" />
-              </button>
-              <button
-                aria-label="nextbtn"
-                class="nextbtn"
-                @click="nextSwiper('teamSwiper')"
-              >
-                <font-awesome-icon icon="fa-solid fa-arrow-right-long" />
-              </button>
+              <div class="homeheadsec slidOurTeam mx-auto">Our Team</div>
+              <h2 class="mainTitle text-center">Awesome team members</h2>
             </div>
           </div>
           <transition name="dataFadein">
-            <div
-              v-show="teamDataLoaded"
-              class="swiper-container"
-              ref="teamSwiper"
-            >
+            <div class="swiper-container team-text-slider" ref="teamSwiper">
               <div class="swiper-wrapper">
                 <div
                   class="swiper-slide"
-                  v-for="(member, index) in getTeamMembersData"
+                  v-for="(member, index) in newTeamMembers"
                   :key="index"
                 >
-                  <div class="memberCard">
-                    <router-link
-                      aria-label="teamMember"
-                      :to="'/teamDetails/' + member.id"
-                    >
-                      <div class="img-container">
-                        <img
-                          :src="member.imgUrl"
-                          alt="team member"
-                          loading="lazy"
-                        />
-                      </div>
-                      <div class="title">
-                        <div class="name">{{ member.name }}</div>
-                        <div class="rule">{{ member.job }}</div>
-                      </div>
-                      <div class="socials">
+                  <div class="memberCard text-center">
+                    <div class="member-info-card">
+                      <div class="name">{{ member.name }}</div>
+                      <div class="expertise">{{ member.expertise }}</div>
+                      <div class="socials mt-3 justify-content-center">
                         <div class="social">
                           <font-awesome-icon icon="fa-brands fa-linkedin-in" />
-                        </div>
-                        <div class="social">
-                          <font-awesome-icon icon="fa-brands fa-x-twitter" />
                         </div>
                         <div class="social">
                           <font-awesome-icon icon="fa-brands fa-github" />
                         </div>
                       </div>
-                    </router-link>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -608,26 +573,44 @@
           <div class="col-lg-4">
             <div class="partners-info mb-5 mb-lg-0">
               <h2 class="text-white mb-3">Our Trusted Partners</h2>
-              <p class="text-muted">We collaborate with industry leaders to deliver the best solutions for our clients.</p>
+              <p class="text-muted">
+                We collaborate with industry leaders to deliver the best
+                solutions for our clients.
+              </p>
             </div>
           </div>
           <div class="col-lg-8">
             <div class="swiper partners-vertical-slider" ref="partnersSwiper">
               <div class="swiper-wrapper">
                 <div class="swiper-slide brand-logo">
-                  <img src="../../imgs/homeAssets/partner_1.svg" alt="partner_1" />
+                  <img
+                    src="../../imgs/homeAssets/partner_1.svg"
+                    alt="partner_1"
+                  />
                 </div>
                 <div class="swiper-slide brand-logo">
-                  <img src="../../imgs/homeAssets/partner_2.svg" alt="partner_2" />
+                  <img
+                    src="../../imgs/homeAssets/partner_2.svg"
+                    alt="partner_2"
+                  />
                 </div>
                 <div class="swiper-slide brand-logo">
-                  <img src="../../imgs/homeAssets/partner_3.svg" alt="partner_3" />
+                  <img
+                    src="../../imgs/homeAssets/partner_3.svg"
+                    alt="partner_3"
+                  />
                 </div>
                 <div class="swiper-slide brand-logo">
-                  <img src="../../imgs/homeAssets/partner_4.svg" alt="partner_4" />
+                  <img
+                    src="../../imgs/homeAssets/partner_4.svg"
+                    alt="partner_4"
+                  />
                 </div>
                 <div class="swiper-slide brand-logo">
-                  <img src="../../imgs/homeAssets/partner_5.svg" alt="partner_5" />
+                  <img
+                    src="../../imgs/homeAssets/partner_5.svg"
+                    alt="partner_5"
+                  />
                 </div>
               </div>
             </div>
@@ -711,8 +694,17 @@ export default {
     return {
       YTIframeVal: false,
       blogDataLoaded: false,
-      teamDataLoaded: false,
+      teamDataLoaded: true,
       PortfolioDataLoaded: false,
+      newTeamMembers: [
+        { name: "Minhal", expertise: "Lead Frontend Developer" },
+        { name: "Abuzar", expertise: "Senior Backend Developer" },
+        { name: "Muhammad", expertise: "Full Stack Engineer" },
+        { name: "Moosa", expertise: "Creative UI/UX Designer" },
+        { name: "Murtaza", expertise: "Mobile App Specialist" },
+        { name: "Ali", expertise: "Digital Marketing & SEO Expert" },
+        { name: "Irtiza", expertise: "Project Manager & Strategy" },
+      ],
     };
   },
   methods: {
@@ -757,37 +749,29 @@ export default {
       this.$nextTick(() => {
         // eslint-disable-next-line no-unused-vars
         const teamSwiper = new Swiper(this.$refs.teamSwiper, {
-          modules: [Pagination],
+          modules: [Pagination, Autoplay],
           slidesPerView: 1,
-          spaceBetween: 15,
+          spaceBetween: 30,
           loop: true,
-          slidesPerGroup: 1,
+          autoplay: {
+            delay: 3000,
+            disableOnInteraction: false,
+          },
           grabCursor: true,
-          allowTouchMove: true,
           breakpoints: {
             1200: {
               slidesPerView: 4,
-              allowTouchMove: false,
-              loop: false,
             },
-            991: {
+            992: {
               slidesPerView: 3,
-              loop: true,
-              allowTouchMove: true,
-              pagination: {
-                enabled: false,
-              },
             },
-            767: {
+            768: {
               slidesPerView: 2,
-              allowTouchMove: true,
-              loop: true,
             },
           },
           pagination: {
             el: ".swiper-pagination",
             clickable: true,
-            enabled: true,
           },
         });
         this.$ScrollTrigger.refresh();
@@ -820,6 +804,22 @@ export default {
         });
         this.$ScrollTrigger.refresh();
       });
+    },
+    getProjectImg(post, index) {
+      if (post.imgUrl && post.imgUrl.startsWith("http")) {
+        return post.imgUrl;
+      }
+      // Local fallback mapping based on common project indices/titles
+      const localImgs = [
+        require("../../imgs/portfolioAssets/portfolio_9.webp"),
+        require("../../imgs/portfolioAssets/portfolio_2.webp"),
+        require("../../imgs/portfolioAssets/portfolio_3.webp"),
+        require("../../imgs/portfolioAssets/portfolio_7.webp"),
+        require("../../imgs/portfolioAssets/portfolio_4.webp"),
+        require("../../imgs/portfolioAssets/portfolio_1.webp"),
+        require("../../imgs/portfolioAssets/portfolio_10.webp"),
+      ];
+      return localImgs[index % localImgs.length];
     },
     gsapAnimation() {
       const scrollTriggerConfig = (trigger) => ({
@@ -1812,98 +1812,102 @@ export default {
     .ourTeam {
       margin-bottom: 150px;
 
-      .memberCard {
-        background: rgba(255, 255, 255, 0.03);
-        border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        padding: 15px;
-        transition: var(--transition);
-        position: relative;
-        overflow: hidden;
+      .team-text-slider {
+        padding: 50px 0;
 
-        &:hover {
-          background: rgba(255, 255, 255, 0.06);
-          border-color: var(--sec-color);
-          transform: translateY(-10px);
+        .memberCard {
+          background: rgba(255, 255, 255, 0.03);
+          backdrop-filter: blur(10px);
+          border: 1px solid var(--glass-border);
+          border-radius: 20px;
+          padding: 50px 30px;
+          transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+          height: 100%;
+          min-height: 280px;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          z-index: 1;
 
-          .img-container img {
-            transform: scale(1.1);
+          &::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            border-radius: 20px;
+            padding: 2px;
+            background: linear-gradient(
+              45deg,
+              transparent,
+              var(--sec-color),
+              transparent
+            );
+            -webkit-mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            mask: linear-gradient(#fff 0 0) content-box,
+              linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0;
+            transition: opacity 0.4s ease;
           }
-          .socials .social {
-            transform: scale(1);
-            opacity: 1;
+
+          &:hover {
+            background: rgba(255, 255, 255, 0.07);
+            border-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-15px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+
+            &::after {
+              opacity: 1;
+            }
+
+            .name {
+              color: var(--sec-color);
+            }
           }
-        }
-
-        .img-container {
-          border-radius: 12px;
-          overflow: hidden;
-          margin-bottom: 20px;
-          aspect-ratio: 4/5;
-
-          img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-          }
-        }
-
-        .title {
-          text-align: center;
-          padding-bottom: 15px;
 
           .name {
             font-family: var(--font-heading);
-            font-size: 22px;
+            font-size: 28px;
             font-weight: 800;
             color: var(--text-main);
-            margin-bottom: 5px;
+            margin-bottom: 12px;
+            transition: color 0.3s ease;
           }
 
-          .rule {
+          .expertise {
             color: var(--text-muted);
             font-size: 14px;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 2px;
+            font-weight: 600;
+            margin-bottom: 25px;
           }
-        }
 
-        .socials {
-          position: absolute;
-          top: 25px;
-          right: 25px;
-          display: flex;
-          flex-direction: column;
-          gap: 10px;
-          z-index: 3;
-
-          .social {
-            width: 38px;
-            height: 38px;
-            background: var(--glass-card);
-            backdrop-filter: blur(10px);
-            border: 1px solid var(--glass-border);
-            border-radius: 50%;
+          .socials {
             display: flex;
-            align-items: center;
-            justify-content: center;
-            color: var(--text-main);
-            font-size: 14px;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            transform: scale(0.8);
-            opacity: 0;
+            gap: 15px;
 
-            @for $i from 1 through 3 {
-              &:nth-child(#{$i}) {
-                transition-delay: #{$i * 0.1}s;
+            .social {
+              width: 42px;
+              height: 42px;
+              background: rgba(255, 255, 255, 0.05);
+              border: 1px solid rgba(255, 255, 255, 0.1);
+              border-radius: 50%;
+              display: flex;
+              align-items: center;
+              justify-content: center;
+              color: var(--text-main);
+              transition: all 0.3s ease;
+
+              &:hover {
+                background: var(--sec-color);
+                color: #000;
+                border-color: var(--sec-color);
+                transform: rotate(360deg);
               }
-            }
-
-            &:hover {
-              background: var(--sec-color);
-              color: black;
-              border-color: var(--sec-color);
             }
           }
         }
@@ -1941,17 +1945,19 @@ export default {
       }
 
       .testimonial-card {
-        background: rgba(255, 255, 255, 0.02);
-        backdrop-filter: blur(15px);
-        -webkit-backdrop-filter: blur(15px);
-        border: 1px solid var(--glass-border);
-        border-radius: 24px;
+        background: rgba(255, 255, 255, 0.03);
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 30px;
         padding: 40px;
         height: 100%;
         position: relative;
-        transition: var(--transition);
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
         overflow: hidden;
+        display: flex;
+        flex-direction: column;
 
         &::before {
           content: "";
@@ -1962,32 +1968,38 @@ export default {
           height: 100%;
           background: radial-gradient(
             circle at top right,
-            rgba(255, 196, 46, 0.05),
-            transparent 60%
+            rgba(255, 196, 46, 0.08),
+            transparent 70%
           );
           pointer-events: none;
         }
 
         &:hover {
           border-color: rgba(255, 196, 46, 0.4);
-          transform: translateY(-8px);
-          background: rgba(255, 255, 255, 0.04);
-          box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+          transform: translateY(-10px);
+          background: rgba(255, 255, 255, 0.05);
+          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 
           .client-photo {
             border-color: var(--sec-color);
             transform: scale(1.05);
           }
+
+          .quote-bg {
+            opacity: 0.15;
+            transform: rotate(0deg) scale(1.1);
+          }
         }
 
         .client-photo {
-          width: 75px;
-          height: 75px;
-          border-radius: 50%;
+          width: 80px;
+          height: 80px;
+          border-radius: 18px;
           overflow: hidden;
           margin-bottom: 25px;
           border: 2px solid rgba(255, 255, 255, 0.1);
-          transition: var(--transition);
+          transition: all 0.4s ease;
+          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 
           img {
             width: 100%;
@@ -1999,12 +2011,12 @@ export default {
         .stars {
           margin-bottom: 20px;
           display: flex;
-          gap: 5px;
+          gap: 6px;
 
           svg {
             color: var(--sec-color);
-            font-size: 14px;
-            filter: drop-shadow(0 0 5px rgba(255, 196, 46, 0.3));
+            font-size: 13px;
+            filter: drop-shadow(0 0 8px rgba(255, 196, 46, 0.4));
             &.deactive {
               color: rgba(254, 254, 254, 0.1);
               filter: none;
@@ -2013,34 +2025,39 @@ export default {
         }
 
         .review {
-          font-size: 18px;
+          font-size: 17px;
           font-weight: 400;
-          line-height: 1.7;
-          color: var(--text-muted);
+          line-height: 1.8;
+          color: rgba(255, 255, 255, 0.85);
           margin-bottom: 30px;
           font-style: italic;
           position: relative;
           z-index: 1;
+          flex-grow: 1;
         }
 
         .client-info {
           position: relative;
           z-index: 1;
+          border-top: 1px solid rgba(255, 255, 255, 0.08);
+          padding-top: 25px;
+
           .name {
             font-family: var(--font-heading);
             font-size: 20px;
-            font-weight: 700;
+            font-weight: 800;
             color: var(--text-main);
             margin: 0;
+            letter-spacing: 0.5px;
           }
 
           .role {
             color: var(--sec-color);
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 700;
             text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-top: 5px;
+            letter-spacing: 2px;
+            margin-top: 6px;
             display: block;
           }
         }
@@ -2049,10 +2066,11 @@ export default {
           position: absolute;
           bottom: 30px;
           right: 30px;
-          font-size: 60px;
+          font-size: 70px;
           color: var(--sec-color);
-          opacity: 0.08;
+          opacity: 0.06;
           transform: rotate(10deg);
+          transition: all 0.5s ease;
         }
       }
 
