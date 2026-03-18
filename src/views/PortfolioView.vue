@@ -67,9 +67,16 @@
                     src="../../imgs/portfolioAssets/portfolio_9.webp"
                     alt="E-Commerce Platform"
                   />
-                  <span>E-Commerce Platform</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Web Development</span>
+                      <h3 class="title">E-Commerce Platform</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -82,9 +89,16 @@
                     src="../../imgs/portfolioAssets/portfolio_2.webp"
                     alt="Ride Sharing App"
                   />
-                  <span>Ride Sharing App</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Mobile Apps</span>
+                      <h3 class="title">Ride Sharing App</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -99,9 +113,16 @@
                     src="../../imgs/portfolioAssets/portfolio_3.webp"
                     alt="Cloud Migration"
                   />
-                  <span>Cloud Migration</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Cloud Solutions</span>
+                      <h3 class="title">Cloud Migration</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -116,9 +137,16 @@
                     src="../../imgs/portfolioAssets/portfolio_7.webp"
                     alt="AI Chatbot Platform"
                   />
-                  <span>AI Chatbot Platform</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">AI & ML</span>
+                      <h3 class="title">AI Chatbot Platform</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -133,9 +161,16 @@
                     src="../../imgs/portfolioAssets/portfolio_4.webp"
                     alt="CRM System"
                   />
-                  <span>CRM System</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Web Development</span>
+                      <h3 class="title">CRM System</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -148,9 +183,16 @@
                     src="../../imgs/portfolioAssets/portfolio_1.webp"
                     alt="Fitness Tracker"
                   />
-                  <span>Fitness Tracker</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Mobile Apps</span>
+                      <h3 class="title">Fitness Tracker</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -165,9 +207,16 @@
                     src="../../imgs/portfolioAssets/portfolio_10.webp"
                     alt="Banking Portal"
                   />
-                  <span>Banking Portal</span>
-                  <span>View Case Study</span>
-                  <div class="artWork"></div>
+                  <div class="overlay">
+                    <div class="project-info">
+                      <span class="category">Web Development</span>
+                      <h3 class="title">Banking Portal</h3>
+                      <div class="view-btn">
+                        <span>View Project</span>
+                        <font-awesome-icon icon="fa-solid fa-arrow-right" />
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </router-link>
             </div>
@@ -422,89 +471,99 @@ export default {
           height: 100%;
           color: #fefefe;
           cursor: pointer;
-          &::after {
-            content: "";
+
+          img {
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 15px;
+            transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          }
+
+          .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: transparent;
-            transition-duration: 0.3s;
+            background: linear-gradient(
+              to top,
+              rgba(0, 0, 0, 0.9) 0%,
+              rgba(0, 0, 0, 0.2) 50%,
+              transparent 100%
+            );
+            display: flex;
+            align-items: flex-end;
+            padding: 30px;
+            opacity: 0;
+            transition: all 0.4s ease;
             z-index: 3;
+
+            .project-info {
+              transform: translateY(20px);
+              transition: all 0.4s ease;
+
+              .category {
+                color: var(--sec-color);
+                font-size: 14px;
+                font-weight: 600;
+                text-transform: uppercase;
+                letter-spacing: 2px;
+                display: block;
+                margin-bottom: 8px;
+              }
+
+              .title {
+                color: #fff;
+                font-size: 22px;
+                font-weight: 700;
+                margin-bottom: 15px;
+                font-family: var(--font-heading);
+              }
+
+              .view-btn {
+                display: flex;
+                align-items: center;
+                gap: 10px;
+                color: #fff;
+                font-weight: 600;
+                font-size: 14px;
+
+                svg {
+                  transition: transform 0.3s ease;
+                }
+              }
+            }
           }
+
           @media (min-width: 992px) {
             &:hover {
-              &::after {
-                background-color: rgba(22, 22, 22, 0.4);
+              img {
+                transform: scale(1.1);
               }
-              .artWork {
-                bottom: -60px;
-                left: -40px;
+              .overlay {
                 opacity: 1;
+                .project-info {
+                  transform: translateY(0);
+                }
               }
-              span:nth-of-type(1),
-              span:nth-of-type(2) {
-                bottom: 22%;
-                opacity: 1;
-              }
-            }
-          }
-          img {
-            max-width: 100%;
-            width: 100%;
-            border-radius: 15px;
-          }
-          span {
-            position: absolute;
-            display: block;
-            text-align: start;
-            transition-duration: 0.5s;
-            z-index: 5;
-            left: 10%;
-            opacity: 0;
-            color: #fefefe;
-            &:nth-of-type(1) {
-              bottom: 15%;
-              font-size: 22px;
-              margin-bottom: 5px;
-              font-weight: 700;
-            }
-            &:nth-of-type(2) {
-              transition-delay: 0.1s;
-              bottom: 17%;
-              color: #fefefeb3;
-              font-weight: 500;
-              position: relative;
-              width: fit-content;
-              &::after {
-                content: "";
-                position: absolute;
-                bottom: 8px;
-                right: -30px;
-                width: 20px;
-                height: 1px;
-                background-color: #fefefeb3;
+              .view-btn svg {
+                transform: translateX(5px);
               }
             }
           }
-          .artWork {
-            position: absolute;
-            bottom: -100px;
-            left: -80px;
-            width: 300px;
-            height: 300px;
-            padding: 105px 20px 80px 65px;
-            border-radius: 50%;
-            background-color: var(--prim-color);
-            z-index: 4;
-            opacity: 0;
-            transition-duration: 0.5s;
-            display: flex;
-            flex-direction: column;
-            @media (max-width: 1380px) {
-              span:nth-child(1) {
-                font-size: 20px !important;
+
+          @media (max-width: 991px) {
+            .overlay {
+              opacity: 1;
+              padding: 20px;
+              .project-info {
+                transform: translateY(0);
+                .title {
+                  font-size: 18px;
+                  margin-bottom: 10px;
+                }
               }
             }
           }

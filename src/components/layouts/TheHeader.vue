@@ -3,11 +3,16 @@
     <div class="container">
       <div class="content">
         <div class="logo">
-          <router-link aria-label="homePage" to="/">
+          <router-link
+            aria-label="homePage"
+            to="/"
+            class="logo-link d-flex align-items-center"
+          >
             <img
-              src="../../../imgs/homeAssets/footer_logo.svg"
+              src="../../../imgs/homeAssets/yamm_tech_logo.png"
               alt="YammTech Logo"
             />
+            <span class="logo-text">YAMM <span>TECH</span></span>
           </router-link>
         </div>
 
@@ -30,7 +35,7 @@
             </li>
             <li class="liLinks">
               <router-link class="aLinks" to="/blog?page=1"
-                >insights</router-link
+                >digital marketing</router-link
               >
             </li>
             <li class="liLinks">
@@ -85,7 +90,7 @@
             </li>
             <li>
               <router-link class="aLinks" to="/blog?page=1"
-                >insights</router-link
+                >digital marketing</router-link
               >
             </li>
             <li>
@@ -177,7 +182,16 @@ header {
   left: 0;
   z-index: 999;
   width: 100%;
-  transition: all 300ms ease-in-out;
+  transition: all 400ms cubic-bezier(0.4, 0, 0.2, 1);
+  border-bottom: 1px solid transparent;
+
+  &.scroll-up {
+    background: rgba(10, 10, 10, 0.8);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--glass-border);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
 
   @media (max-width: 1199px) {
     .content {
@@ -198,9 +212,45 @@ header {
     padding-top: 10px;
 
     .logo {
-      img {
-        height: 40px;
-        width: auto;
+      .logo-link {
+        text-decoration: none;
+        gap: 15px;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 5px 15px;
+        border-radius: 50px;
+        backdrop-filter: blur(5px);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+        transition: all 0.3s ease;
+
+        img {
+          height: 42px;
+          width: auto;
+          filter: drop-shadow(0 0 10px rgba(31, 81, 254, 0.5));
+          transition: transform 0.3s ease;
+        }
+
+        &:hover {
+          background: rgba(255, 255, 255, 0.08);
+          border-color: rgba(255, 196, 46, 0.3);
+        }
+
+        &:hover img {
+          transform: scale(1.08);
+          filter: drop-shadow(0 0 15px rgba(255, 196, 46, 0.6));
+        }
+
+        .logo-text {
+          font-size: 24px;
+          font-weight: 800;
+          letter-spacing: 1px;
+          color: white;
+          text-transform: uppercase;
+          font-family: "Outfit", sans-serif;
+
+          span {
+            color: var(--sec-color);
+          }
+        }
       }
     }
 
@@ -332,6 +382,7 @@ header {
     .links {
       ul {
         display: flex;
+        align-items: center;
         margin: 0;
         padding: 0;
 
@@ -340,13 +391,7 @@ header {
           list-style: none;
 
           &:not(:last-of-type) {
-            margin-right: 50px;
-          }
-
-          @media (min-width: 992px) {
-            .aLinks:hover {
-              color: var(--prim-color) !important;
-            }
+            margin-right: 40px;
           }
 
           .aLinks {
@@ -354,12 +399,42 @@ header {
             display: flex;
             align-items: center;
             height: 90px;
-            transition-duration: 0.3s;
-            color: #ffffff;
-            font-size: 15px;
+            transition: var(--transition);
+            color: var(--text-main);
+            font-size: 14px;
             text-transform: uppercase;
             font-weight: 500;
             text-decoration: none;
+            font-family: var(--font-heading);
+            letter-spacing: 1px;
+            position: relative;
+
+            &::after {
+              content: "";
+              position: absolute;
+              bottom: 30px;
+              left: 50%;
+              width: 0;
+              height: 2px;
+              background-color: var(--sec-color);
+              transition: var(--transition);
+              transform: translateX(-50%);
+              box-shadow: 0 0 10px var(--sec-color);
+            }
+
+            &:hover {
+              color: var(--sec-color);
+              &::after {
+                width: 100%;
+              }
+            }
+
+            &.router-link-active {
+              color: var(--sec-color);
+              &::after {
+                width: 100%;
+              }
+            }
 
             svg {
               margin-left: 5px;
@@ -399,7 +474,7 @@ header {
 
             @media (min-width: 992px) {
               &:hover {
-                color: var(--prim-color);
+                color: var(--sec-color);
               }
             }
           }

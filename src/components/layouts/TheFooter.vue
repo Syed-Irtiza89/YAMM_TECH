@@ -1,90 +1,103 @@
 <template>
-  <footer>
+  <footer class="premium-footer">
     <div class="container">
       <div class="footer-main">
-        <div class="row">
+        <div class="row g-5">
           <!-- Column 1: Logo & About -->
-          <div class="col-lg-3 col-md-6 col-12">
-            <div class="logo">
-              <img
-                src="../../../imgs/homeAssets/footer_logo.svg"
-                alt="YammTech Logo"
-              />
+          <div class="col-lg-4 col-md-12">
+            <div class="footer-brand">
+              <router-link to="/" class="logo">
+                <img
+                  src="../../../imgs/homeAssets/yamm_tech_logo.png"
+                  alt="YammTech Logo"
+                />
+                <span class="logo-text">YAMM <span>TECH</span></span>
+              </router-link>
+              <p class="mt-4">
+                Empowering businesses with enterprise-grade software solutions.
+                We specialize in high-performance web and mobile products that
+                drive digital innovation and measurable growth.
+              </p>
+              <div class="social-wrapper mt-4">
+                <a href="#" class="social-link" aria-label="LinkedIn">
+                  <font-awesome-icon icon="fa-brands fa-linkedin-in" />
+                </a>
+                <a href="#" class="social-link" aria-label="Github">
+                  <font-awesome-icon icon="fa-brands fa-github" />
+                </a>
+                <a href="#" class="social-link" aria-label="X-Twitter">
+                  <font-awesome-icon icon="fa-brands fa-x-twitter" />
+                </a>
+                <a href="#" class="social-link" aria-label="Instagram">
+                  <font-awesome-icon icon="fa-brands fa-instagram" />
+                </a>
+              </div>
             </div>
-            <p>
-              YammTech delivers enterprise-grade software solutions to
-              businesses worldwide. From concept to deployment, we build digital
-              products that drive growth and innovation.
+          </div>
+
+          <!-- Column 2: Quick Links -->
+          <div class="col-lg-2 col-md-4 col-6">
+            <h5 class="footer-head">Company</h5>
+            <ul class="footer-links">
+              <li><router-link to="/">Home</router-link></li>
+              <li><router-link to="/about">About Us</router-link></li>
+              <li><router-link to="/portfolio">Portfolio</router-link></li>
+              <li><router-link to="/services">Services</router-link></li>
+              <li><router-link to="/contact">Contact</router-link></li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Services -->
+          <div class="col-lg-3 col-md-4 col-6">
+            <h5 class="footer-head">Services</h5>
+            <ul class="footer-links">
+              <li><router-link to="/services">Web Development</router-link></li>
+              <li><router-link to="/services">Mobile Apps</router-link></li>
+              <li><router-link to="/services">UI/UX Design</router-link></li>
+              <li><router-link to="/services">SEO Marketing</router-link></li>
+              <li><router-link to="/services">Cloud Solutions</router-link></li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Newsletter -->
+          <div class="col-lg-3 col-md-4">
+            <h5 class="footer-head">Stay Updated</h5>
+            <p class="small text-muted mb-4">
+              Subscribe for the latest tech insights.
             </p>
-            <div class="socials">
-              <div class="social">
-                <font-awesome-icon icon="fa-brands fa-linkedin-in" />
-              </div>
-              <div class="social">
-                <font-awesome-icon icon="fa-brands fa-x-twitter" />
-              </div>
-              <div class="social">
-                <font-awesome-icon icon="fa-brands fa-github" />
-              </div>
-            </div>
-          </div>
-
-          <!-- Column 2: Services -->
-          <div class="col-lg-3 col-md-6 col-12">
-            <span class="head">Our Services</span>
-            <ul class="links">
-              <li>Website Development</li>
-              <li>Mobile Applications</li>
-              <li>SEO & Digital Marketing</li>
-              <li>3D Rendering</li>
-              <li>Technology Consulting</li>
-            </ul>
-          </div>
-
-          <!-- Column 3: Contact Info -->
-          <div class="col-lg-3 col-md-6 col-12">
-            <span class="head">Contact Us</span>
-            <ul class="contact-info">
-              <li>
-                <font-awesome-icon icon="fa-solid fa-location-dot" />
-                <span>123 Business Avenue, Tech Park, City - 400001</span>
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-phone" />
-                <span>+91 98765 43210</span>
-              </li>
-              <li>
-                <font-awesome-icon icon="fa-solid fa-envelope" />
-                <span>hello@yammtech.com</span>
-              </li>
-            </ul>
-          </div>
-
-          <!-- Column 4: Subscribe -->
-          <div class="col-lg-3 col-md-6 col-12">
-            <span class="head">Stay Updated</span>
-            <div class="inputgroup mainSubmit">
+            <div class="newsletter-form">
               <input
-                id="footeremail"
                 type="email"
-                placeholder="Enter your email"
+                placeholder="Email address"
+                class="newsletter-input"
               />
-              <button class="mainBtn" id="footersend">Subscribe</button>
+              <button class="newsletter-btn">
+                <font-awesome-icon icon="fa-solid fa-paper-plane" />
+              </button>
             </div>
-            <p class="subscribe-text">
-              Get the latest insights on technology trends, software
-              development, and digital transformation delivered to your inbox.
-            </p>
+            <div class="contact-compact mt-4">
+              <div class="contact-item">
+                <font-awesome-icon icon="fa-solid fa-phone" />
+                <span>+1 (437) 559-1485</span>
+              </div>
+              <div class="contact-item">
+                <font-awesome-icon icon="fa-solid fa-envelope" />
+                <span>info@yammtech.com</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
 
       <!-- Footer Bottom -->
       <div class="footer-bottom">
-        <div class="copyright">© 2024 YammTech. All rights reserved.</div>
-        <div class="terms-privacy">
-          <span>Terms of Use</span>
-          <span>Privacy Policy</span>
+        <div class="copyright">
+          &copy; 2025 <span class="text-gold">YammTech</span>. All Rights
+          Reserved.
+        </div>
+        <div class="legal-links">
+          <router-link to="/terms">Terms</router-link>
+          <router-link to="/privacy">Privacy</router-link>
         </div>
       </div>
     </div>
@@ -92,224 +105,204 @@
 </template>
 
 <style lang="scss" scoped>
-:root {
-  --yammtech-blue: #1f51fe;
-  --yammtech-yellow: #ffc42e;
-}
+.premium-footer {
+  background: linear-gradient(180deg, #0a0a0a 0%, #050505 100%);
+  padding: 100px 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  position: relative;
+  overflow: hidden;
 
-@media (max-width: 991px) {
-  footer {
-    margin-top: 60px !important;
-  }
-}
-
-footer {
-  margin-top: 95px;
-  color: #fefefeb3;
-  background: linear-gradient(267.18deg, #161616 0%, #080808 100%);
-  padding: 60px 0 0;
-
-  @media (max-width: 991px) {
-    .footer-main {
-      padding-bottom: 15px !important;
-    }
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 1px;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      var(--sec-color),
+      transparent
+    );
+    opacity: 0.3;
   }
 
   .footer-main {
-    padding-bottom: 35px;
+    padding-bottom: 80px;
+  }
 
-    .row {
-      & > div {
-        margin-bottom: 40px;
+  .footer-brand {
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+
+      img {
+        height: 40px;
+        filter: drop-shadow(0 0 10px rgba(255, 196, 46, 0.2));
       }
 
-      // Logo & About Section
-      .logo {
-        margin-bottom: 20px;
-
-        img {
-          height: 40px;
-          width: auto;
-        }
-      }
-
-      .logo ~ p {
-        margin: 0 0 20px;
-        font-size: 15px;
-        line-height: 1.7;
-        color: #fefefeb3;
-      }
-
-      // Social Icons
-      .socials {
+      .logo-text {
+        font-family: var(--font-heading);
+        font-size: 24px;
+        font-weight: 800;
         color: white;
-        margin-top: 15px;
-        display: flex;
-        align-items: center;
-        justify-content: start;
-        gap: 12px;
+        letter-spacing: 1px;
 
-        .social {
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          width: 40px;
-          height: 40px;
-          border-radius: 50%;
-          border: 2px solid rgba(255, 255, 255, 0.2);
-          cursor: pointer;
-          transition: all 0.3s ease;
-          color: white;
-
-          @media (min-width: 992px) {
-            &:hover {
-              border-color: var(--yammtech-blue);
-              background-color: var(--yammtech-blue);
-              transform: translateY(-3px);
-            }
-          }
-
-          svg {
-            font-size: 18px;
-          }
+        span {
+          color: var(--sec-color);
         }
       }
+    }
 
-      // Section Headers
-      .head {
-        display: block;
-        margin-bottom: 25px;
-        color: white;
-        font-size: 18px;
-        font-weight: 600;
-        position: relative;
-        padding-bottom: 10px;
+    p {
+      color: rgba(255, 255, 255, 0.6);
+      line-height: 1.8;
+      font-size: 15px;
+      max-width: 320px;
+    }
+  }
 
-        &::after {
-          content: "";
-          position: absolute;
-          bottom: 0;
-          left: 0;
-          width: 40px;
-          height: 3px;
-          background: var(--yammtech-blue);
-        }
-      }
+  .social-wrapper {
+    display: flex;
+    gap: 12px;
 
-      // Services List
-      ul.links {
-        list-style: none;
-        padding: 0;
-        margin: 0;
+    .social-link {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.05);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
-        li {
-          color: #fefefeb3;
-          transition: all 0.3s ease;
-          cursor: pointer;
-          margin-bottom: 12px;
-          font-size: 15px;
-
-          @media (min-width: 992px) {
-            &:hover {
-              color: var(--yammtech-blue);
-              transform: translateX(5px);
-            }
-          }
-        }
-      }
-
-      // Contact Info with Icons
-      ul.contact-info {
-        list-style: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-          display: flex;
-          align-items: flex-start;
-          gap: 12px;
-          margin-bottom: 15px;
-          font-size: 15px;
-          line-height: 1.6;
-
-          svg {
-            color: var(--yammtech-blue);
-            font-size: 16px;
-            margin-top: 3px;
-            min-width: 16px;
-          }
-
-          span {
-            color: #fefefeb3;
-          }
-        }
-      }
-
-      // Subscribe Section
-      .inputgroup {
-        display: flex;
-        gap: 10px;
-        margin-bottom: 15px;
-
-        input {
-          flex: 1;
-          background: rgba(255, 255, 255, 0.05);
-          border: 1px solid rgba(255, 255, 255, 0.1);
-          border-radius: 8px;
-          padding: 12px 15px;
-          color: white;
-          font-size: 14px;
-          transition: all 0.3s ease;
-
-          &:focus {
-            outline: none;
-            border-color: var(--yammtech-blue);
-            background: rgba(31, 81, 254, 0.1);
-          }
-
-          &::placeholder {
-            color: rgba(255, 255, 255, 0.4);
-          }
-        }
-
-        .mainBtn {
-          background: var(--yammtech-blue);
-          border: none;
-          border-radius: 8px;
-          padding: 0 20px;
-          color: white;
-          font-size: 14px;
-          font-weight: 500;
-          cursor: pointer;
-          transition: all 0.3s ease;
-          white-space: nowrap;
-
-          @media (min-width: 992px) {
-            &:hover {
-              background: #0a3bff;
-              transform: translateY(-2px);
-              box-shadow: 0 5px 15px rgba(31, 81, 254, 0.3);
-            }
-          }
-        }
-      }
-
-      .subscribe-text {
-        font-size: 14px;
-        line-height: 1.7;
-        color: #fefefeb3;
-        margin: 15px 0 0;
+      &:hover {
+        background: var(--sec-color);
+        color: black;
+        transform: translateY(-5px);
+        border-color: var(--sec-color);
+        box-shadow: 0 10px 20px rgba(255, 196, 46, 0.2);
       }
     }
   }
 
-  // Footer Bottom
-  .footer-bottom {
-    padding: 20px 0;
+  .footer-head {
+    color: white;
+    font-family: var(--font-heading);
+    font-weight: 700;
+    font-size: 18px;
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 12px;
+
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 30px;
+      height: 2px;
+      background: var(--sec-color);
+    }
+  }
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 12px;
+
+      a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 15px;
+        transition: all 0.3s ease;
+
+        &:hover {
+          color: var(--sec-color);
+          padding-left: 5px;
+        }
+      }
+    }
+  }
+
+  .newsletter-form {
     display: flex;
-    align-items: center;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 6px;
+    margin-bottom: 20px;
+    transition: var(--transition);
+
+    &:focus-within {
+      border-color: var(--sec-color);
+      background: rgba(255, 255, 255, 0.08);
+    }
+
+    .newsletter-input {
+      background: transparent;
+      border: none;
+      padding: 10px 15px;
+      color: white;
+      width: 100%;
+      font-size: 14px;
+
+      &:focus {
+        outline: none;
+      }
+    }
+
+    .newsletter-btn {
+      background: var(--sec-color);
+      border: none;
+      border-radius: 8px;
+      width: 42px;
+      height: 42px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: black;
+      transition: var(--transition);
+
+      &:hover {
+        transform: scale(1.05);
+        background: white;
+      }
+    }
+  }
+
+  .contact-compact {
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 14px;
+      margin-bottom: 12px;
+
+      svg {
+        color: var(--sec-color);
+        font-size: 14px;
+      }
+    }
+  }
+
+  .footer-bottom {
+    padding: 30px 0;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
     justify-content: space-between;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    align-items: center;
     font-size: 14px;
 
     @media (max-width: 767px) {
@@ -319,36 +312,25 @@ footer {
     }
 
     .copyright {
-      color: #fefefeb3;
+      color: rgba(255, 255, 255, 0.4);
+
+      .text-gold {
+        color: var(--sec-color);
+        font-weight: 600;
+      }
     }
 
-    .terms-privacy {
+    .legal-links {
       display: flex;
-      gap: 20px;
+      gap: 25px;
 
-      span {
-        color: #fefefeb3;
-        cursor: pointer;
-        transition: color 0.3s ease;
-        position: relative;
+      a {
+        color: rgba(255, 255, 255, 0.4);
+        text-decoration: none;
+        transition: var(--transition);
 
-        &:first-child {
-          &::after {
-            content: "";
-            position: absolute;
-            right: -10px;
-            top: 50%;
-            transform: translateY(-50%);
-            width: 1px;
-            height: 12px;
-            background-color: rgba(255, 255, 255, 0.2);
-          }
-        }
-
-        @media (min-width: 992px) {
-          &:hover {
-            color: var(--yammtech-blue);
-          }
+        &:hover {
+          color: white;
         }
       }
     }

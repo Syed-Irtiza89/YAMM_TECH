@@ -157,9 +157,11 @@ router.afterEach(function () {
 
   const mdlinks = document.querySelector(".mdlinks");
   const mdbars = document.querySelector(".mdbars");
-  mdlinks.classList.remove("show");
-  mdbars.classList.remove("activebars");
-  mdbars.setAttribute("aria-expanded", false);
+  if (mdlinks) mdlinks.classList.remove("show");
+  if (mdbars) {
+    mdbars.classList.remove("activebars");
+    mdbars.setAttribute("aria-expanded", false);
+  }
   const openlinks = document.querySelectorAll(".openlinks");
   const shoplinks = document.querySelector("#shoplinks");
   const pageslinks = document.querySelector("#pageslinks");
@@ -168,8 +170,8 @@ router.afterEach(function () {
     link.setAttribute("aria-expanded", false);
     link.classList.add("collapsed");
   });
-  shoplinks.classList.remove("show");
-  pageslinks.classList.remove("show");
+  if (shoplinks) shoplinks.classList.remove("show");
+  if (pageslinks) pageslinks.classList.remove("show");
 
   // reset mdLinks-end
 });

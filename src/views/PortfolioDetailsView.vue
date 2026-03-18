@@ -54,7 +54,7 @@
       </div>
     </div>
     <base-meeting :btn="false">
-      <template #default>agency@arino.com</template>
+      <template #default>info@yammtech.com</template>
     </base-meeting>
   </div>
 </template>
@@ -111,65 +111,87 @@ export default {
 
 <style lang="scss" scoped>
 .portfolioDetails {
+  background: var(--bg-dark);
+
   .project-details {
+    padding-bottom: 100px;
+
     .img-container {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: var(--shadow-premium);
+
       img {
         max-width: 100%;
-        max-height: 650px;
+        max-height: 700px;
         width: 100%;
-        border-radius: 15px;
         object-fit: cover;
+        transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+        &:hover {
+          transform: scale(1.02);
+        }
       }
     }
-    @media (max-width: 991px) {
-      .content {
-        margin-top: 40px !important;
-      }
-    }
+
     .content {
-      margin-top: 90px;
-      @media (max-width: 991px) {
-        .seccol {
-          margin-top: 40px;
-        }
-      }
-      &:nth-child(2) {
-        display: flex;
-        align-items: center;
-      }
-      p {
-        display: block;
-        margin-bottom: 30px;
-        color: #fefefeb3;
-        position: relative;
-        font-size: 17px;
-      }
-      @media (max-width: 991px) {
-        .projInfo {
-          font-size: 26px !important;
-          margin-bottom: 30px !important;
-        }
-      }
-      .projInfo {
-        font-size: 28px;
-        color: #fefefe;
-        font-weight: 700;
-        margin-bottom: 50px;
-      }
-      .dataCont {
-        margin-bottom: 30px;
+      margin-top: 80px;
+
+      .mainTitle {
+        font-family: var(--font-heading);
+        font-size: 48px;
+        font-weight: 800;
+        color: var(--text-main);
+        margin: 15px 0 25px;
+
         @media (max-width: 991px) {
-          .infoCat {
-            font-size: 18px !important;
+          font-size: 36px;
+        }
+      }
+
+      p {
+        font-size: 18px;
+        line-height: 1.7;
+        color: var(--text-muted);
+        margin-bottom: 25px;
+      }
+
+      .seccol {
+        .projInfo {
+          font-family: var(--font-heading);
+          font-size: 28px;
+          font-weight: 800;
+          color: var(--text-main);
+          margin-bottom: 40px;
+          display: flex;
+          align-items: center;
+          gap: 15px;
+
+          &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background: var(--glass-border);
           }
         }
-        .infoCat {
-          color: var(--prim-color);
-          font-size: 22px;
-          font-weight: 700;
-        }
-        .infoName {
-          color: #fefefeb3;
+
+        .dataCont {
+          margin-bottom: 30px;
+
+          .infoCat {
+            font-family: var(--font-heading);
+            color: var(--sec-color);
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+          }
+
+          .infoName {
+            color: var(--text-main);
+            font-size: 18px;
+            font-weight: 500;
+          }
         }
       }
     }

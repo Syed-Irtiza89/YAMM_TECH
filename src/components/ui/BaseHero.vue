@@ -1,6 +1,6 @@
 <template>
   <div class="heroSec">
-    <div class="content" :style="{ backgroundImage: `url(${imgUrl})` }">
+    <div class="content">
       <div class="container">
         <div class="head">
           <slot name="head"></slot>
@@ -41,9 +41,7 @@ export default {
   }
   .content {
     position: relative;
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
+    background: linear-gradient(180deg, #071233 0%, #020510 100%);
     width: 100%;
     height: 650px;
     padding: 120px 0 50px;

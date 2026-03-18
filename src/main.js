@@ -14,7 +14,13 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 import { Swiper } from "swiper";
-import { Navigation, Pagination, Controller, Thumbs } from "swiper/modules";
+import {
+  Navigation,
+  Pagination,
+  Controller,
+  Thumbs,
+  Autoplay,
+} from "swiper/modules";
 
 import "bootstrap/dist/js/bootstrap.js";
 import "bootstrap/dist/css/bootstrap.css";
@@ -48,6 +54,22 @@ import {
   faCaretUp,
   faCaretDown,
   faCartArrowDown,
+  faArrowRight,
+  faBolt,
+  faUsersGear,
+  faShieldHalved,
+  faPenNib,
+  faCode,
+  faMobileScreenButton,
+  faMagnifyingGlassChart,
+  faBullhorn,
+  faCoins,
+  faUsers,
+  faAward,
+  faTags,
+  faRocket,
+  faFaceSmile,
+  faQuoteRight,
 } from "@fortawesome/free-solid-svg-icons";
 import {
   faCircleRight,
@@ -58,6 +80,7 @@ import {
   faXTwitter,
   faYoutube,
   faGithub,
+  faWhatsapp,
 } from "@fortawesome/free-brands-svg-icons";
 // ui_components_start
 
@@ -108,7 +131,24 @@ library.add(
   faCartPlus,
   faCaretUp,
   faCaretDown,
-  faCartArrowDown
+  faCartArrowDown,
+  faWhatsapp,
+  faBolt,
+  faUsersGear,
+  faShieldHalved,
+  faPenNib,
+  faCode,
+  faMobileScreenButton,
+  faMagnifyingGlassChart,
+  faBullhorn,
+  faCoins,
+  faArrowRight,
+  faUsers,
+  faAward,
+  faTags,
+  faRocket,
+  faFaceSmile,
+  faQuoteRight
 );
 
 const app = createApp(App);
@@ -124,6 +164,7 @@ app.config.globalProperties.$Navigation = Navigation;
 app.config.globalProperties.$Pagination = Pagination;
 app.config.globalProperties.$Controller = Controller;
 app.config.globalProperties.$Thumbs = Thumbs;
+app.config.globalProperties.$Autoplay = Autoplay;
 app.component("font-awesome-icon", FontAwesomeIcon);
 app.component("base-hero", BaseHero);
 app.component("base-meeting", BaseMeeting);

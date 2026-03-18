@@ -5,7 +5,6 @@
       <template #nav>what we do</template>
     </base-hero>
 
-    <!-- CORE SERVICES - Updated with YammTech services -->
     <div class="coreServices topPaddingO">
       <div class="container">
         <div class="content">
@@ -22,25 +21,53 @@
                     data-imgNum="1"
                     class="activeClip"
                     src="../../imgs/servicesAssets/service_7.webp"
-                    alt="website development"
+                    alt="UI/UX design"
                   />
                   <img
                     loading="lazy"
                     data-imgNum="2"
                     class=""
                     src="../../imgs/servicesAssets/service_8.webp"
-                    alt="mobile development"
+                    alt="website development"
                   />
                   <img
                     loading="lazy"
                     data-imgNum="3"
                     class=""
                     src="../../imgs/servicesAssets/service_9.webp"
-                    alt="digital marketing"
+                    alt="mobile development"
                   />
                   <img
                     loading="lazy"
                     data-imgNum="4"
+                    class=""
+                    src="../../imgs/servicesAssets/service_10.webp"
+                    alt="seo services"
+                  />
+                  <img
+                    loading="lazy"
+                    data-imgNum="5"
+                    class=""
+                    src="../../imgs/servicesAssets/service_7.webp"
+                    alt="digital marketing"
+                  />
+                  <img
+                    loading="lazy"
+                    data-imgNum="6"
+                    class=""
+                    src="../../imgs/servicesAssets/service_8.webp"
+                    alt="fintech software"
+                  />
+                  <img
+                    loading="lazy"
+                    data-imgNum="7"
+                    class=""
+                    src="../../imgs/servicesAssets/service_9.webp"
+                    alt="ai video"
+                  />
+                  <img
+                    loading="lazy"
+                    data-imgNum="8"
                     class=""
                     src="../../imgs/servicesAssets/service_10.webp"
                     alt="3d rendering"
@@ -50,7 +77,7 @@
             </div>
             <div class="col-xl-7 col-lg-6 col-12">
               <ul>
-                <!-- Service 1: Website Development -->
+                <!-- Service 1: UI/UX Design -->
                 <li>
                   <div
                     data-imgNum="1"
@@ -58,24 +85,17 @@
                     :class="['linkcont', { active: activeService === '1' }]"
                   >
                     <div class="info">
-                      <div class="servname">Website Development</div>
+                      <div class="servname">UI/UX Design Services</div>
                       <p>
-                        Custom, high-performance websites and web applications
-                        built with modern frameworks like React, Vue, and
-                        Node.js. From corporate sites to complex enterprise
-                        portals, we deliver scalable, secure, and SEO-optimized
-                        solutions.
+                        As a top UI/UX design agency, we focus on creating
+                        digital experiences people actually enjoy using. Better
+                        UX = happier users = more conversions and loyalty.
                       </p>
-                    </div>
-                    <div class="arrowIcon">
-                      <font-awesome-icon
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                      />
                     </div>
                   </div>
                 </li>
 
-                <!-- Service 2: Mobile Applications -->
+                <!-- Service 2: Website Development -->
                 <li>
                   <div
                     data-imgNum="2"
@@ -83,23 +103,17 @@
                     :class="['linkcont', { active: activeService === '2' }]"
                   >
                     <div class="info">
-                      <div class="servname">Mobile Applications</div>
+                      <div class="servname">Website Development Company</div>
                       <p>
-                        Native and cross-platform mobile apps for iOS and
-                        Android. We build feature-rich, intuitive applications
-                        using Flutter, React Native, and native technologies
-                        that users love to engage with.
+                        We build websites that look great and perform even
+                        better — fast, mobile-friendly, secure, and built to
+                        rank.
                       </p>
-                    </div>
-                    <div class="arrowIcon">
-                      <font-awesome-icon
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                      />
                     </div>
                   </div>
                 </li>
 
-                <!-- Service 3: SEO & Digital Marketing -->
+                <!-- Service 3: Mobile App Development -->
                 <li>
                   <div
                     data-imgNum="3"
@@ -107,23 +121,18 @@
                     :class="['linkcont', { active: activeService === '3' }]"
                   >
                     <div class="info">
-                      <div class="servname">SEO & Digital Marketing</div>
+                      <div class="servname">
+                        Mobile App Development Services
+                      </div>
                       <p>
-                        Data-driven SEO strategies and digital marketing
-                        campaigns that increase visibility, drive qualified
-                        traffic, and maximize conversions. From keyword research
-                        to content strategy and analytics.
+                        Turn your idea into an app users love — whether native
+                        iOS/Android or cost-effective cross-platform.
                       </p>
-                    </div>
-                    <div class="arrowIcon">
-                      <font-awesome-icon
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                      />
                     </div>
                   </div>
                 </li>
 
-                <!-- Service 4: 3D Rendering -->
+                <!-- Service 4: SEO Services -->
                 <li>
                   <div
                     data-imgNum="4"
@@ -131,18 +140,80 @@
                     :class="['linkcont', { active: activeService === '4' }]"
                   >
                     <div class="info">
-                      <div class="servname">3D Rendering</div>
+                      <div class="servname">SEO Services Company</div>
                       <p>
-                        Photorealistic 3D rendering, architectural
-                        visualization, and interactive 3D experiences. We bring
-                        concepts to life with stunning visuals for real estate,
-                        product design, and immersive web experiences.
+                        Stop guessing — start ranking. We use proven SEO tactics
+                        to improve your Google positions and bring in steady
+                        organic traffic.
                       </p>
                     </div>
-                    <div class="arrowIcon">
-                      <font-awesome-icon
-                        icon="fa-solid fa-arrow-up-right-from-square"
-                      />
+                  </div>
+                </li>
+
+                <!-- Service 5: Digital Marketing -->
+                <li>
+                  <div
+                    data-imgNum="5"
+                    @mouseenter="hoverCoreServ($event, '5')"
+                    :class="['linkcont', { active: activeService === '5' }]"
+                  >
+                    <div class="info">
+                      <div class="servname">Digital Marketing Agency</div>
+                      <p>
+                        Grow your brand and revenue with smart, measurable
+                        marketing.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Service 6: Fintech Solutions -->
+                <li>
+                  <div
+                    data-imgNum="6"
+                    @mouseenter="hoverCoreServ($event, '6')"
+                    :class="['linkcont', { active: activeService === '6' }]"
+                  >
+                    <div class="info">
+                      <div class="servname">Fintech & Financial Software</div>
+                      <p>
+                        Secure, compliant software built for finance and fintech
+                        innovators.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Service 7: AI Video Creation -->
+                <li>
+                  <div
+                    data-imgNum="7"
+                    @mouseenter="hoverCoreServ($event, '7')"
+                    :class="['linkcont', { active: activeService === '7' }]"
+                  >
+                    <div class="info">
+                      <div class="servname">AI Video Creation Services</div>
+                      <p>
+                        Produce professional-grade videos in a fraction of the
+                        time — perfect for marketing and product launches.
+                      </p>
+                    </div>
+                  </div>
+                </li>
+
+                <!-- Service 8: 3D Rendering -->
+                <li>
+                  <div
+                    data-imgNum="8"
+                    @mouseenter="hoverCoreServ($event, '8')"
+                    :class="['linkcont', { active: activeService === '8' }]"
+                  >
+                    <div class="info">
+                      <div class="servname">Interior Design & 3D Rendering</div>
+                      <p>
+                        See your space before it exists — with photorealistic
+                        detail.
+                      </p>
                     </div>
                   </div>
                 </li>
@@ -172,28 +243,28 @@
                 <li>
                   <font-awesome-icon
                     icon="fa-solid fa-check-circle"
-                    style="color: #1f51fe"
+                    style="color: var(--sec-color)"
                   />
                   <span>IT Strategy & Roadmap</span>
                 </li>
                 <li>
                   <font-awesome-icon
                     icon="fa-solid fa-check-circle"
-                    style="color: #1f51fe"
+                    style="color: var(--sec-color)"
                   />
                   <span>Technology Stack Advisory</span>
                 </li>
                 <li>
                   <font-awesome-icon
                     icon="fa-solid fa-check-circle"
-                    style="color: #1f51fe"
+                    style="color: var(--sec-color)"
                   />
                   <span>Digital Transformation</span>
                 </li>
                 <li>
                   <font-awesome-icon
                     icon="fa-solid fa-check-circle"
-                    style="color: #1f51fe"
+                    style="color: var(--sec-color)"
                   />
                   <span>Architecture Review & Optimization</span>
                 </li>
@@ -486,9 +557,9 @@ export default {
           cursor: pointer;
           &.active {
             .arrowIcon {
-              background-color: var(--prim-color);
-              border: 2px solid var(--prim-color);
-              color: white;
+              background-color: var(--sec-color);
+              border: 2px solid var(--sec-color);
+              color: black;
             }
           }
           .info {
@@ -536,7 +607,7 @@ export default {
           right: -20px;
           width: 100%;
           height: 100%;
-          background-color: var(--prim-color);
+          background-color: var(--sec-color);
           border-radius: 15px;
           z-index: 1;
         }
@@ -567,8 +638,8 @@ export default {
     .consulting-badge {
       display: inline-block;
       padding: 5px 15px;
-      background-color: rgba(31, 81, 254, 0.15);
-      color: #1f51fe;
+      background-color: rgba(255, 196, 46, 0.15);
+      color: var(--sec-color);
       border-radius: 30px;
       font-size: 14px;
       font-weight: 600;
@@ -698,7 +769,7 @@ export default {
         background: linear-gradient(
           90deg,
           transparent,
-          var(--prim-color),
+          var(--sec-color),
           transparent
         );
         @media (max-width: 991px) {
@@ -719,12 +790,12 @@ export default {
 
       &:hover {
         transform: translateY(-10px);
-        border-color: var(--prim-color);
-        box-shadow: 0 20px 40px rgba(31, 81, 254, 0.15);
+        border-color: var(--sec-color);
+        box-shadow: 0 20px 40px rgba(255, 196, 46, 0.15);
 
         .approach-icon {
-          background-color: var(--prim-color);
-          color: white;
+          background-color: var(--sec-color);
+          color: black;
         }
       }
 

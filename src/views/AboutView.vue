@@ -9,17 +9,24 @@
         <div class="content row">
           <div class="col-lg-7 col-12 spec-col">
             <div class="info">
-              <div class="homeheadsec">about our agency</div>
+              <div class="homeheadsec">about us</div>
               <div class="mainTitle">
-                Digital excellence, <br />
-                delivered daily
+                About YammTech – Your Partner in <br />
+                Digital Success
               </div>
               <p class="mainP">
-                YammTech distinguishes itself through a rigorous consultative
-                approach that aligns technology with business strategy. We don't
-                simply execute tasks we partner with leadership to architect
-                solutions that drive operational efficiency, reduce technical
-                debt, and create sustainable long-term value for stakeholders.
+                We’re YammTech — a passionate software development and digital
+                marketing agency helping companies of all sizes win online.
+                Whether you need standout UI/UX design, a high-converting
+                website, a next-level mobile app, smarter SEO, fintech tools,
+                AI-powered videos, or lifelike 3D interior renderings, we’ve got
+                you covered.
+              </p>
+              <p class="mainP">
+                Every business is different, so we listen first — then deliver
+                tailored digital solutions that boost efficiency, visibility,
+                and revenue. Creativity + modern tech + real data = results you
+                can measure.
               </p>
             </div>
           </div>
@@ -28,24 +35,6 @@
               <img
                 loading="lazy"
                 src="../../imgs/aboutAssets/about_img_1.webp"
-                alt="client"
-              />
-            </div>
-          </div>
-          <div class="col-lg-7 col-12">
-            <div class="img-container">
-              <img
-                loading="lazy"
-                src="../../imgs/aboutAssets/about_img_2.webp"
-                alt="client"
-              />
-            </div>
-          </div>
-          <div class="col-lg-5 col-12">
-            <div class="img-container">
-              <img
-                loading="lazy"
-                src="../../imgs/aboutAssets/about_img_3.webp"
                 alt="client"
               />
             </div>
@@ -68,25 +57,18 @@
             </div>
           </div>
           <div class="col-xl-5 col-lg-6 offset-xl-1 offset-0 col-12">
-            <div class="homeheadsec">why choose us</div>
-            <div class="mainTitle">Highly experienced people with us</div>
+            <div class="homeheadsec">Our Vision</div>
+            <div class="mainTitle">Global technology partner</div>
             <p>
-              YammTech stands apart as a premier custom software development
-              company, delivering enterprise grade web and mobile applications
-              to clients across fintech, healthcare, and e-commerce sectors. Our
-              unique value proposition lies in combining technical architecture
-              expertise with strategic business consulting ensuring every
-              solution we build drives measurable ROI, operational efficiency,
-              and sustainable competitive advantage for our partners.
+              To be the go-to global technology partner known for innovation,
+              dependability, and consistent business growth.
             </p>
-            <p class="mainP">
-              Our multidisciplinary team of senior developers, UI/UX designers,
-              and technology strategists brings decades of cumulative experience
-              to every engagement. We follow battle tested agile methodologies,
-              implement robust DevOps practices, and maintain rigorous quality
-              assurance standards resulting in scalable, secure, and high
-              performance software that transforms how businesses operate,
-              compete, and grow in today's digital economy.
+            <div class="homeheadsec mt-5">Our Mission</div>
+            <div class="mainTitle">Competing – and winning</div>
+            <p>
+              Deliver secure, scalable, high-performance digital products and
+              strategies that help companies compete — and win — in today’s
+              fast-moving world.
             </p>
           </div>
         </div>
@@ -168,91 +150,112 @@ export default {
 
 <style lang="scss" scoped>
 .aboutPage {
+  background: var(--bg-dark);
+
   .aboutAgency {
+    padding-bottom: 80px;
+
     .content {
-      @media (min-width: 1199px) {
-        .spec-col {
-          .info {
-            width: 70% !important;
-          }
-        }
-      }
-      @media (max-width: 991px) {
-        .spec-col {
-          margin-bottom: 40px !important;
-        }
-      }
-      .spec-col {
-        margin-bottom: 25px;
+      align-items: center;
+
+      .info {
         .mainTitle {
-          margin-bottom: 30px !important;
-        }
-      }
-      .img-container {
-        margin-bottom: 25px;
-        img {
-          max-width: 100%;
-          width: 100%;
-          border-radius: 18px;
-        }
-      }
-    }
-  }
-  @media (max-width: 991px) {
-    .whyChooseUs {
-      margin-top: 80px !important;
-    }
-  }
-  .whyChooseUs {
-    margin-top: 150px;
-    @media (max-width: 991px) {
-      .img-container {
-        margin-bottom: 40px !important;
-      }
-    }
-    @media (max-width: 575px) {
-      .imgcontent {
-        padding: 0 30px 30px 0 !important;
-        .img-container {
-          &::after {
-            --afterPositionRight: -30px !important;
-            --afterPositionBottom: -30px !important;
+          font-family: var(--font-heading);
+          font-size: 52px;
+          line-height: 1.1;
+          font-weight: 800;
+          color: var(--text-main);
+          margin: 15px 0 30px;
+
+          @media (max-width: 991px) {
+            font-size: 38px;
           }
         }
+
+        .mainP {
+          font-size: 18px;
+          color: var(--text-muted);
+          line-height: 1.7;
+          margin-bottom: 25px;
+        }
       }
-    }
-    .imgcontent {
-      padding: 0 60px 60px 0;
+
       .img-container {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: var(--shadow-premium);
         position: relative;
-        overflow: initial;
-        --afterPositionBottom: -60px;
-        --afterPositionRight: -60px;
+
         &::after {
           content: "";
           position: absolute;
-          bottom: var(--afterPositionBottom);
-          right: var(--afterPositionRight);
-          width: 100%;
-          height: 100%;
-          background-color: var(--prim-color);
-          border-radius: 15px;
-          z-index: 1;
+          inset: 0;
+          border: 1px solid var(--glass-border);
+          border-radius: 24px;
+          pointer-events: none;
         }
+
         img {
-          position: relative;
-          max-width: 100%;
           width: 100%;
-          border-radius: 15px;
-          z-index: 2;
+          transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+          &:hover {
+            transform: scale(1.05);
+          }
         }
       }
     }
-    p:first-of-type {
-      display: block;
-      margin-bottom: 15px;
-      color: #fefefeb3;
+  }
+
+  .whyChooseUs {
+    margin-top: 150px;
+    padding-bottom: 100px;
+
+    @media (max-width: 991px) {
+      margin-top: 80px;
+    }
+
+    .mainTitle {
+      font-family: var(--font-heading);
+      font-size: 36px;
+      font-weight: 700;
+      color: var(--text-main);
+      margin: 10px 0 20px;
+    }
+
+    p {
       font-size: 17px;
+      line-height: 1.7;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    .imgcontent {
+      padding: 0 40px 40px 0;
+
+      .img-container {
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -40px;
+          right: -40px;
+          width: 100%;
+          height: 100%;
+          background: var(--sec-gradient);
+          border-radius: 20px;
+          opacity: 0.2;
+          z-index: 1;
+        }
+
+        img {
+          position: relative;
+          z-index: 2;
+          border-radius: 20px;
+          box-shadow: var(--shadow-premium);
+          width: 100%;
+        }
+      }
     }
   }
 }
