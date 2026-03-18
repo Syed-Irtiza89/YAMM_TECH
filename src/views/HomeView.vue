@@ -466,11 +466,14 @@
             <!-- Testimonial 1 -->
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <div class="client-photo">
-                  <img
-                    src="../../imgs/homeAssets/testimonial_1.webp"
-                    alt="Jasmine Rivera"
-                  />
+                <div class="card-header">
+                  <div class="client-img">
+                    <img src="../../imgs/homeAssets/testimonial_1.webp" alt="Jasmine Rivera" />
+                  </div>
+                  <div class="client-details">
+                    <h4 class="name">Jasmine Rivera</h4>
+                    <span class="role">Marketing Analyst</span>
+                  </div>
                 </div>
                 <div class="stars">
                   <font-awesome-icon icon="fa-solid fa-star" />
@@ -485,25 +488,21 @@
                   purchased. Your stuff is the bomb! Veritatis et quasi
                   architecto beatae vitae dicta sunt to the explicabo."
                 </p>
-                <div class="client-info">
-                  <h4 class="name">Jasmine Rivera</h4>
-                  <span class="role">Marketing Analyst</span>
-                </div>
-                <font-awesome-icon
-                  icon="fa-solid fa-quote-right"
-                  class="quote-bg"
-                />
+                <font-awesome-icon icon="fa-solid fa-quote-right" class="quote-bg" />
               </div>
             </div>
 
             <!-- Testimonial 2 -->
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <div class="client-photo">
-                  <img
-                    src="../../imgs/homeAssets/testimonial_2.webp"
-                    alt="Ethan Carter"
-                  />
+                <div class="card-header">
+                  <div class="client-img">
+                    <img src="../../imgs/homeAssets/testimonial_2.webp" alt="Ethan Carter" />
+                  </div>
+                  <div class="client-details">
+                    <h4 class="name">Ethan Carter</h4>
+                    <span class="role">Software Engineer</span>
+                  </div>
                 </div>
                 <div class="stars">
                   <font-awesome-icon icon="fa-solid fa-star" />
@@ -518,25 +517,21 @@
                   absolutely fantastic! It's like the words of praise that come
                   straight from the creator himself."
                 </p>
-                <div class="client-info">
-                  <h4 class="name">Ethan Carter</h4>
-                  <span class="role">Software Engineer</span>
-                </div>
-                <font-awesome-icon
-                  icon="fa-solid fa-quote-right"
-                  class="quote-bg"
-                />
+                <font-awesome-icon icon="fa-solid fa-quote-right" class="quote-bg" />
               </div>
             </div>
 
             <!-- Testimonial 3 -->
             <div class="swiper-slide">
               <div class="testimonial-card">
-                <div class="client-photo">
-                  <img
-                    src="../../imgs/homeAssets/testimonial_3.webp"
-                    alt="Olivia Bennett"
-                  />
+                <div class="card-header">
+                  <div class="client-img">
+                    <img src="../../imgs/homeAssets/testimonial_3.webp" alt="Olivia Bennett" />
+                  </div>
+                  <div class="client-details">
+                    <h4 class="name">Olivia Bennett</h4>
+                    <span class="role">Financial Planner</span>
+                  </div>
                 </div>
                 <div class="stars">
                   <font-awesome-icon icon="fa-solid fa-star" />
@@ -551,14 +546,7 @@
                   mind-blowing! Every word you craft unveils the secrets of
                   excellence."
                 </p>
-                <div class="client-info">
-                  <h4 class="name">Olivia Bennett</h4>
-                  <span class="role">Financial Planner</span>
-                </div>
-                <font-awesome-icon
-                  icon="fa-solid fa-quote-right"
-                  class="quote-bg"
-                />
+                <font-awesome-icon icon="fa-solid fa-quote-right" class="quote-bg" />
               </div>
             </div>
           </div>
@@ -569,49 +557,45 @@
 
     <div class="partners py-5">
       <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-4">
-            <div class="partners-info mb-5 mb-lg-0">
-              <h2 class="text-white mb-3">Our Trusted Partners</h2>
-              <p class="text-muted">
-                We collaborate with industry leaders to deliver the best
-                solutions for our clients.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-8">
-            <div class="swiper partners-vertical-slider" ref="partnersSwiper">
-              <div class="swiper-wrapper">
-                <div class="swiper-slide brand-logo">
-                  <img
-                    src="../../imgs/homeAssets/partner_1.svg"
-                    alt="partner_1"
-                  />
-                </div>
-                <div class="swiper-slide brand-logo">
-                  <img
-                    src="../../imgs/homeAssets/partner_2.svg"
-                    alt="partner_2"
-                  />
-                </div>
-                <div class="swiper-slide brand-logo">
-                  <img
-                    src="../../imgs/homeAssets/partner_3.svg"
-                    alt="partner_3"
-                  />
-                </div>
-                <div class="swiper-slide brand-logo">
-                  <img
-                    src="../../imgs/homeAssets/partner_4.svg"
-                    alt="partner_4"
-                  />
-                </div>
-                <div class="swiper-slide brand-logo">
-                  <img
-                    src="../../imgs/homeAssets/partner_5.svg"
-                    alt="partner_5"
-                  />
-                </div>
+        <div class="partners-info text-center mb-5">
+          <h2 class="text-white mb-3">Our Trusted Partners</h2>
+          <p class="text-white-50 mx-auto" style="max-width: 600px; color: rgba(255, 255, 255, 0.9) !important;">
+            We collaborate with industry leaders to deliver the best solutions
+            for our clients.
+          </p>
+        </div>
+        <div class="partners-slider-wrap">
+          <div class="swiper partners-slider" ref="partnersSwiper">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide brand-logo">
+                <img
+                  src="../../imgs/homeAssets/partner_1.svg"
+                  alt="partner_1"
+                />
+              </div>
+              <div class="swiper-slide brand-logo">
+                <img
+                  src="../../imgs/homeAssets/partner_2.svg"
+                  alt="partner_2"
+                />
+              </div>
+              <div class="swiper-slide brand-logo">
+                <img
+                  src="../../imgs/homeAssets/partner_3.svg"
+                  alt="partner_3"
+                />
+              </div>
+              <div class="swiper-slide brand-logo">
+                <img
+                  src="../../imgs/homeAssets/partner_4.svg"
+                  alt="partner_4"
+                />
+              </div>
+              <div class="swiper-slide brand-logo">
+                <img
+                  src="../../imgs/homeAssets/partner_5.svg"
+                  alt="partner_5"
+                />
               </div>
             </div>
           </div>
@@ -803,6 +787,27 @@ export default {
           },
         });
         this.$ScrollTrigger.refresh();
+      });
+    },
+    initPartnersSwiper() {
+      this.$nextTick(() => {
+        // eslint-disable-next-line no-unused-vars
+        const partnersSwiper = new Swiper(this.$refs.partnersSwiper, {
+          modules: [Autoplay],
+          direction: "vertical",
+          slidesPerView: 2,
+          spaceBetween: 20,
+          loop: true,
+          autoplay: {
+            delay: 2000,
+            disableOnInteraction: false,
+          },
+          breakpoints: {
+            992: {
+              slidesPerView: 3,
+            },
+          },
+        });
       });
     },
     getProjectImg(post, index) {
@@ -1949,12 +1954,12 @@ export default {
         backdrop-filter: blur(20px);
         -webkit-backdrop-filter: blur(20px);
         border: 1px solid rgba(255, 255, 255, 0.08);
-        border-radius: 30px;
-        padding: 40px;
+        border-radius: 20px;
+        padding: 25px;
         height: 100%;
         position: relative;
-        transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-        box-shadow: 0 15px 45px rgba(0, 0, 0, 0.2);
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         overflow: hidden;
         display: flex;
         flex-direction: column;
@@ -1968,38 +1973,35 @@ export default {
           height: 100%;
           background: radial-gradient(
             circle at top right,
-            rgba(255, 196, 46, 0.08),
-            transparent 70%
+            rgba(255, 196, 46, 0.06),
+            transparent 60%
           );
           pointer-events: none;
         }
 
         &:hover {
-          border-color: rgba(255, 196, 46, 0.4);
-          transform: translateY(-10px);
+          border-color: rgba(255, 196, 46, 0.3);
+          transform: translateY(-5px);
           background: rgba(255, 255, 255, 0.05);
-          box-shadow: 0 25px 60px rgba(0, 0, 0, 0.4);
 
           .client-photo {
             border-color: var(--sec-color);
-            transform: scale(1.05);
           }
 
           .quote-bg {
-            opacity: 0.15;
-            transform: rotate(0deg) scale(1.1);
+            opacity: 0.1;
+            transform: scale(1.1);
           }
         }
 
         .client-photo {
-          width: 80px;
-          height: 80px;
-          border-radius: 18px;
+          width: 50px;
+          height: 50px;
+          border-radius: 50%;
           overflow: hidden;
-          margin-bottom: 25px;
+          margin-bottom: 15px;
           border: 2px solid rgba(255, 255, 255, 0.1);
           transition: all 0.4s ease;
-          box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
 
           img {
             width: 100%;
@@ -2009,14 +2011,14 @@ export default {
         }
 
         .stars {
-          margin-bottom: 20px;
+          margin-bottom: 12px;
           display: flex;
-          gap: 6px;
+          gap: 3px;
 
           svg {
             color: var(--sec-color);
-            font-size: 13px;
-            filter: drop-shadow(0 0 8px rgba(255, 196, 46, 0.4));
+            font-size: 10px;
+            filter: drop-shadow(0 0 5px rgba(255, 196, 46, 0.3));
             &.deactive {
               color: rgba(254, 254, 254, 0.1);
               filter: none;
@@ -2025,11 +2027,11 @@ export default {
         }
 
         .review {
-          font-size: 17px;
+          font-size: 14px;
           font-weight: 400;
-          line-height: 1.8;
-          color: rgba(255, 255, 255, 0.85);
-          margin-bottom: 30px;
+          line-height: 1.6;
+          color: rgba(255, 255, 255, 0.8);
+          margin-bottom: 20px;
           font-style: italic;
           position: relative;
           z-index: 1;
@@ -2039,38 +2041,39 @@ export default {
         .client-info {
           position: relative;
           z-index: 1;
-          border-top: 1px solid rgba(255, 255, 255, 0.08);
-          padding-top: 25px;
+          border-top: 1px solid rgba(255, 255, 255, 0.06);
+          padding-top: 15px;
 
           .name {
             font-family: var(--font-heading);
-            font-size: 20px;
-            font-weight: 800;
+            font-size: 16px;
+            font-weight: 700;
             color: var(--text-main);
             margin: 0;
-            letter-spacing: 0.5px;
           }
 
           .role {
             color: var(--sec-color);
-            font-size: 12px;
-            font-weight: 700;
+            font-size: 10px;
+            font-weight: 600;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-top: 6px;
+            letter-spacing: 1.2px;
+            margin-top: 3px;
             display: block;
+            opacity: 0.7;
           }
         }
 
         .quote-bg {
           position: absolute;
-          bottom: 30px;
-          right: 30px;
-          font-size: 70px;
+          bottom: 15px;
+          right: 15px;
+          font-size: 40px;
           color: var(--sec-color);
-          opacity: 0.06;
+          opacity: 0.03;
           transform: rotate(10deg);
           transition: all 0.5s ease;
+          pointer-events: none;
         }
       }
 
@@ -2092,31 +2095,33 @@ export default {
       background: rgba(255, 255, 255, 0.02);
       border-top: 1px solid var(--glass-border);
       border-bottom: 1px solid var(--glass-border);
+      padding: 60px 0;
 
-      .partners-vertical-slider {
+      .partners-slider {
+        width: 100%;
         height: 350px;
-        padding: 20px 0;
+        padding: 10px 0;
+        margin: 0 auto;
+        max-width: 250px;
 
         .swiper-slide {
-          height: 120px !important;
           display: flex;
           align-items: center;
           justify-content: center;
           transition: all 0.3s ease;
           opacity: 0.5;
 
-          &.swiper-slide-active,
           &:hover {
             opacity: 1;
-            transform: scale(1.1);
+            transform: scale(1.05);
           }
 
           img {
-            max-width: 180px;
-            width: auto;
-            height: 60px;
+            max-width: 150px;
+            width: 100%;
+            height: auto;
             filter: grayscale(1) brightness(2);
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
 
             &:hover {
               filter: grayscale(0) brightness(1);

@@ -612,36 +612,37 @@ body {
   // Btns-end
   @media (max-width: 991px) {
     .homeheadsec {
-      font-size: 16px !important;
-      margin-bottom: 15px !important;
+      font-size: 14px !important;
+      margin-bottom: 12px !important;
     }
   }
   .homeheadsec {
     display: block;
     color: #999696;
-    font-size: 19px;
+    font-size: 16px;
     font-weight: 700;
-    margin-bottom: 18px;
+    margin-bottom: 15px;
     width: fit-content;
     text-transform: capitalize;
+    letter-spacing: 1px;
   }
   @media (max-width: 1380px) {
     .mainTitle {
-      font-size: 42px !important;
+      font-size: 36px !important;
     }
   }
   @media (max-width: 991px) {
     .mainTitle {
-      margin-bottom: 20px !important;
-      font-size: 36px !important;
+      margin-bottom: 15px !important;
+      font-size: 28px !important;
     }
   }
   .mainTitle {
-    font-size: 50px;
-    margin: 0 0 45px;
+    font-size: 42px;
+    margin: 0 0 35px;
     color: #fefefe;
-    font-weight: 700;
-    line-height: 1.3em;
+    font-weight: 800;
+    line-height: 1.2;
   }
   .ourAwards {
     .carousel__slide {
